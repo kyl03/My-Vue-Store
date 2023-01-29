@@ -82,4 +82,9 @@ export default defineComponent({
   margin-left: auto;
   margin-right: auto;
 }
+.btn-primary {
+  background-color: gray;
+  border-color: thistle;
+  color: thistle;
+}
 </style>

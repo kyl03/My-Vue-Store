@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">{{ title }}</a>
+    <p class="navbar-brand">{{ title }}</p>
     <div class="btn-logout" v-if="userIsLoggedIn">
       <CustomButton @click="logOut">Log Out</CustomButton>
     </div>
@@ -47,5 +47,19 @@ export default defineComponent({
   border-radius: 5px;
   width: fit-content;
   justify-content: flex-end;
+}
+
+.navbar {
+  height: 100px;
+
+  background-color: thistle;
+  margin-bottom: 50px;
+}
+.navbar-brand {
+  padding: auto;
+  color: gray;
+}
+p {
+  size: 20px;
 }
 </style>

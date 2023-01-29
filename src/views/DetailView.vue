@@ -3,12 +3,6 @@
     <h2>{{ product.title }}</h2>
     <p>{{ product.description }}</p>
     <p>Price: {{ product.price }}</p>
-    <!-- <div class="w3-content w3-display-container" v-for="image in product.images"  :key="image.index"
-          :image="product.image[]">
-            <img class="mySlides" :src="image" style="width:100%">
-            <button class="w3-button w3-black w3-display-left" @click="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-black w3-display-right" @onclick="plusDivs(1)">&#10095;</button>
-        </div> -->
     <p>Last update: {{ product.updatedAt.split("T")[0] }}</p>
     <div>
       <img :src="product.images[0]" alt="" id="image" />
@@ -22,7 +16,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import useProducts from "@/composables/useProducts";
-import NavBar from "@/components/NavBar.vue";
 export default defineComponent({
   props: {
     id: {
@@ -52,9 +45,6 @@ export default defineComponent({
         imgElement?.setAttribute("src", product.value.images[img_counter]);
       },
     };
-  },
-  components: {
-    NavBar,
   },
 });
 </script>
