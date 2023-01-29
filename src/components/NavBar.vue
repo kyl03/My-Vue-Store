@@ -34,6 +34,7 @@ export default defineComponent({
         //TODO
         console.log("logout");
         localStorage.removeItem("token");
+        localStorage.removeItem("refresh_token");
         checkIfUserIsLoggedIn();
         deleteProfileState();
       },
