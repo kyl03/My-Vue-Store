@@ -27,7 +27,8 @@ export default defineComponent({
     },
   },
   setup() {
-    let { userIsLoggedIn, checkIfUserIsLoggedIn } = useUsers();
+    let { userIsLoggedIn, checkIfUserIsLoggedIn, deleteProfileState } =
+      useUsers();
     console.log(userIsLoggedIn);
     return {
       userIsLoggedIn,
@@ -36,6 +37,7 @@ export default defineComponent({
         console.log("logout");
         localStorage.removeItem("token");
         checkIfUserIsLoggedIn();
+        deleteProfileState();
       },
     };
   },

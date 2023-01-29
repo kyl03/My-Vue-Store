@@ -1,5 +1,4 @@
 import { Profile } from "@/models/profile";
-import { Token } from "@/models/token";
 import { User } from "@/models/user";
 import { MutationTree } from "vuex";
 import { IUsersState } from "./state";
@@ -14,9 +13,7 @@ const mutations: MutationTree<IUsersState> = {
   setSelectedUser(state, user: User) {
     state.selectedUser = user;
   },
-  setToken(state, token: Token) {
-    state.token = token;
-  },
+
   setUserIsLoggedIn(state, userIsLoggedIn: boolean) {
     state.userIsLoggedIn = userIsLoggedIn;
   },

@@ -76,6 +76,9 @@ const actions: ActionTree<IUsersState, IState> = {
       commit("setUserProfile", data);
     }
   },
+  deleteProfileState({ commit }) {
+    commit("setUserProfile", {});
+  },
 };
 
 export default actions;

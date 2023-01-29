@@ -26,6 +26,7 @@ const useUsers = () => {
     checkIfUserIsLoggedIn: () => store.dispatch("users/checkIfUserIsLoggedIn"),
 
     fetchUserProfile: () => store.dispatch("users/fetchUserProfile"),
+    deleteProfileState: () => store.dispatch("users/deleteProfileState"),
   };
 };
 

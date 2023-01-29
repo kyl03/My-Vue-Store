@@ -12,9 +12,6 @@ const getters: GetterTree<IUsersState, IState> = {
   getUser(state) {
     return state.selectedUser;
   },
-  getToken(state) {
-    return state.token;
-  },
   getUserIsLoggedIn(state) {
     return state.userIsLoggedIn;
   },
