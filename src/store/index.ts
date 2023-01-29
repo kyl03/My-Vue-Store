@@ -1,7 +1,6 @@
 
 import { User } from '@/models/user';
 import { createStore } from 'vuex'
-import cartModule from './cart';
 import productsModule from './products';
 import usersModule from './users';
 
@@ -26,7 +25,6 @@ export default createStore({
   actions: {
   },
   modules: {
-    cart: cartModule,
     users: usersModule,
     products: productsModule
   }
