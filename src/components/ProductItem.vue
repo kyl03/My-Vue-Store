@@ -28,9 +28,14 @@ export default defineComponent({
   margin-right: auto;
   width: 300px;
   display: flex;
-  border: 1px solid black;
   border-radius: 5px;
   padding: 5px;
+  border: 1px solid thistle;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.user-item:hover {
+  border: 1px solid black;
 }
 
 .user-avatar {
@@ -52,5 +57,10 @@ export default defineComponent({
   width: fit-content;
   background-color: gray;
   justify-content: flex-end;
+}
+.card-body {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

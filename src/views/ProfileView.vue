@@ -26,16 +26,22 @@ export default defineComponent({
 .card {
   border-style: solid;
   border-radius: 15px;
+  margin-top: 25px;
   padding: 20px;
   width: 70%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
 img {
   width: 40%;
   object-fit: scale-down;
+}
+.card {
+  border: 1px solid thistle;
 }
 
 @media only screen and (min-width: 600px) {

@@ -1,14 +1,12 @@
 <template>
   <div class="card">
-    <h2>{{ product.title }}</h2>
+    <h3>{{ product.title }}</h3>
     <p>{{ product.description }}</p>
     <p>Price: {{ product.price }}</p>
     <p>Last update: {{ product.updatedAt.split("T")[0] }}</p>
     <div>
       <img :src="product.images[0]" alt="" id="image" />
-      <button class="w3-button w3-black w3-display-right" @click="changeImg">
-        &#10095;
-      </button>
+      <button class="btn-slider" @click="changeImg">&#10095;</button>
     </div>
   </div>
 </template>
@@ -61,5 +59,16 @@ export default defineComponent({
 
 img {
   margin: 10px;
+}
+.btn-slider {
+  width: 30px;
+  text-align: center;
+  display: inline;
+}
+h3 {
+  color: rgb(198, 148, 198);
+}
+p {
+  color: gray;
 }
 </style>

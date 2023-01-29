@@ -1,13 +1,7 @@
 <template>
   <nav>
-    <ul>
-      <li>
-        <router-link :to="{ name: 'home' }">Home</router-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'profile' }">Profile</router-link>
-      </li>
-    </ul>
+    <router-link :to="{ name: 'home' }">Home </router-link>
+    <router-link :to="{ name: 'profile' }">Profile</router-link>
   </nav>
 </template>
 
@@ -17,3 +11,4 @@ export default defineComponent({
   name: "NavBarLinks",
 });
 </script>
+<style scoped></style>

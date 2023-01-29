@@ -4,6 +4,7 @@
       <label for="exampleInputEmail1">Email address</label>
       <input
         v-model="email"
+        required
         type="email"
         class="form-control"
         id="exampleInputEmail1"
@@ -18,6 +19,7 @@
       <label for="exampleInputPassword1">Password</label>
       <input
         v-model="password"
+        required
         type="password"
         class="form-control"
         id="exampleInputPassword1"
@@ -34,29 +36,27 @@
 <script lang="ts">
 import useUsers from "@/composables/useUsers";
 import router from "@/router";
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "LoginView",
   setup() {
-    let password = "";
+    let password = ref<string>("");
+    let email = ref<string>("");
     const { fetchUserToken } = useUsers();
-    let email = "";
     return {
       email,
       password,
       onSubmit: (email: string, password: string) => {
-        console.log(email);
         if (email != "" && password != "") {
           if (email.includes("@")) {
             const email_last = email.split("@");
-            console.log(email_last);
             if (email_last[1].includes(".")) {
               const data = {
                 email: email,
                 password: password,
               };
               try {
-                console.log("fetching");
+                console.log("fetchingToken");
                 fetchUserToken(data);
                 router.push({ name: "home" });
               } catch (error) {
@@ -82,6 +82,7 @@ export default defineComponent({
   margin-left: auto;
   margin-right: auto;
 }
+
 .btn-primary {
   background-color: gray;
   border-color: thistle;

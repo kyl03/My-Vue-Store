@@ -2,7 +2,11 @@
   <nav class="navbar navbar-light bg-light">
     <p class="navbar-brand">{{ title }}</p>
     <div class="btn-logout" v-if="userIsLoggedIn">
-      <CustomButton @click="logOut">Log Out</CustomButton>
+      <CustomButton @click="logOut">
+        <template v-slot name="right-icon" src>
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </template>
+      </CustomButton>
     </div>
   </nav>
 </template>
@@ -37,29 +41,38 @@ export default defineComponent({
   },
 });
 </script>
-<style>
+<style scoped>
 .btn-logout {
   margin: 5px;
-  display: flex;
   color: thistle;
   border-style: solid;
   border-color: thistle;
   border-radius: 5px;
   width: fit-content;
-  justify-content: flex-end;
+  justify-content: end;
 }
 
 .navbar {
-  height: 100px;
-
+  height: 80px;
   background-color: thistle;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
+
 .navbar-brand {
   padding: auto;
   color: gray;
+  display: flex;
+  justify-content: flex-start;
 }
+
 p {
-  size: 20px;
+  font-size: 30px;
+  font-weight: 300;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

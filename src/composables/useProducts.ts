@@ -11,6 +11,7 @@ const useProducts = () => {
     filteredProducts: computed(
       () => store.getters["products/getProductsByFilter"]
     ),
+    productsLength: computed(() => store.getters["products/getProductsLength"]),
 
     //ACTIONS
     fetchProducts: () => store.dispatch("products/fetchProducts"),
@@ -18,6 +19,8 @@ const useProducts = () => {
       store.dispatch("products/fetchProductById", productId),
     fetchProductsByFilter: (filter: string) =>
       store.dispatch("products/fetchProductsByFilter", filter),
+    fetchProductsPage: (previous_limit: number) =>
+      store.dispatch("products/fetchProductsPage", previous_limit),
   };
 };
 

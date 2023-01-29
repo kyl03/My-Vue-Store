@@ -15,6 +15,9 @@ const getters: GetterTree<IProductsState, IState> = {
   getProductsByFilter(state) {
     return state.filteredProducts;
   },
+  getProductsLength(state) {
+    return state.products.length;
+  },
 };
 
 export default getters;

@@ -52,6 +52,22 @@ const actions: ActionTree<IProductsState, IState> = {
     // usamos la mutación para volcar los datos obtenidos en la variable del state products
     commit("setFilteredProducts", data);
   },
+  async fetchProductsPage({ commit }, previous_limit: number) {
+    // usamos la mutación para poner isLoading = true
+    commit("setIsLoading", true);
+
+    // obtenemos los datos de manera asíncrona
+    const { data } = await fakeShopApi.get<unknown, AxiosResponse<Product[]>>(
+      `/products?offset=${previous_limit}&limit=10`
+    );
+
+    // usamos la mutación para poner isLoading = false
+    commit("setIsLoading", false);
+
+    // usamos la mutación para volcar los datos obtenidos en la variable del state products
+
+    commit("setProducts", data);
+  },
 };
 
 export default actions;

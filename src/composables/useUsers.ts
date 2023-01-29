@@ -1,5 +1,4 @@
 import { Login } from "@/models/login";
-import { Token } from "@/models/token";
 import { computed } from "vue";
 import { useStore } from "vuex";
 

@@ -52,7 +52,7 @@ const actions: ActionTree<IUsersState, IState> = {
     } catch (error) {
       console.log(error);
       commit("setUserIsLoggedIn", false);
-      alert(error);
+      alert("Not valid inputs");
     }
     router.push("/");
   },
