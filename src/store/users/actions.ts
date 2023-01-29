@@ -63,7 +63,7 @@ const actions: ActionTree<IUsersState, IState> = {
     } else {
       commit("setUserIsLoggedIn", false);
       router.push("/login");
-      commit("setToken", {});
+      // commit("setToken", {});
     }
   },
   async fetchUserProfile({ commit }) {
