@@ -13,7 +13,7 @@ const useUsers = () => {
     user: computed(() => store.getters["users/getUser"]),
     token: computed(() => store.getters["users/getToken"]),
     userIsLoggedIn: computed(() => store.getters["users/getUserIsLoggedIn"]),
-    userProfile: computed(()=> store.getters['users/getUserProfile']),
+    userProfile: computed(() => store.getters["users/getUserProfile"]),
 
     // ACTIONS
     fetchUsers: () => store.dispatch("users/fetchUsers"),
@@ -21,16 +21,13 @@ const useUsers = () => {
       store.dispatch("users/fetchUserById", userId),
 
     fetchUserToken: (input: Login) =>
-      store.dispatch('users/fetchUserToken', input),
-    fetchUserIsLoggedIn: (token: string) => 
-      store.dispatch('users/fetchUserIsLoggedIn', token),
-    checkIfUserIsLoggedIn: ()=>
-      store.dispatch('users/checkIfUserIsLoggedIn'),
+      store.dispatch("users/fetchUserToken", input),
+    fetchUserIsLoggedIn: (token: string) =>
+      store.dispatch("users/fetchUserIsLoggedIn", token),
+    checkIfUserIsLoggedIn: () => store.dispatch("users/checkIfUserIsLoggedIn"),
 
-    fetchUserProfile:() =>
-      store.dispatch('users/fetchUserProfile')
+    fetchUserProfile: () => store.dispatch("users/fetchUserProfile"),
   };
-}
-
+};
 
 export default useUsers;

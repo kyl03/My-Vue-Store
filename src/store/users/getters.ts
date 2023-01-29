@@ -12,14 +12,14 @@ const getters: GetterTree<IUsersState, IState> = {
   getUser(state) {
     return state.selectedUser;
   },
-  getToken(state){
+  getToken(state) {
     return state.token;
   },
-  getUserIsLoggedIn(state){
+  getUserIsLoggedIn(state) {
     return state.userIsLoggedIn;
   },
-  getUserProfile(state){
+  getUserProfile(state) {
     return state.userProfile;
-  }
+  },
 };
 export default getters;

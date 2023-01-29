@@ -1,0 +1,10 @@
+button{
+    margin: 5px;
+    display: flex;
+    color: thistle;
+    border-style: solid;
+    border-color: thistle;
+    border-radius: 5px;
+    width: fit-content;
+    justify-content: flex-end;
+}

@@ -8,7 +8,7 @@ export interface IUsersState {
   selectedUser: User | null;
   token: Token;
   userIsLoggedIn: boolean;
-  userProfile: Profile|null;
+  userProfile: Profile | null;
 }
 
 function state(): IUsersState {
@@ -16,7 +16,7 @@ function state(): IUsersState {
     users: [],
     isLoading: false,
     selectedUser: null,
-    token: {access_token:'', refresh_token:''},
+    token: { access_token: "", refresh_token: "" },
     userIsLoggedIn: false,
     userProfile: null,
   };

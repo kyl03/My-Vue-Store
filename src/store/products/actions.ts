@@ -11,7 +11,7 @@ const actions: ActionTree<IProductsState, IState> = {
     commit("setIsLoading", true);
 
     // obtenemos los datos de manera asíncrona
-    const{ data } = await fakeShopApi.get<unknown, AxiosResponse<Product[]>>(
+    const { data } = await fakeShopApi.get<unknown, AxiosResponse<Product[]>>(
       "/products"
     );
 
@@ -40,19 +40,18 @@ const actions: ActionTree<IProductsState, IState> = {
   async fetchProductsByFilter({ commit }, filter: string) {
     // commit llama a la mutación para poner isLoading = true
     commit("setIsLoading", true);
-    console.log('fetchProductByFilter: ' +filter);
+    console.log("fetchProductByFilter: " + filter);
     // obtenemos los datos de manera asíncrona
-    const{ data } = await fakeShopApi.get<unknown, AxiosResponse<Product[]>>(
+    const { data } = await fakeShopApi.get<unknown, AxiosResponse<Product[]>>(
       `/products/?title=${filter.toLowerCase()}`
     );
-      
+
     // usamos la mutación para poner isLoading = false
     commit("setIsLoading", false);
 
     // usamos la mutación para volcar los datos obtenidos en la variable del state products
     commit("setFilteredProducts", data);
   },
-    
 };
 
 export default actions;

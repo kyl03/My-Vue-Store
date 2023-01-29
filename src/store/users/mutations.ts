@@ -14,15 +14,15 @@ const mutations: MutationTree<IUsersState> = {
   setSelectedUser(state, user: User) {
     state.selectedUser = user;
   },
-  setToken(state, token: Token){
+  setToken(state, token: Token) {
     state.token = token;
   },
-  setUserIsLoggedIn(state, userIsLoggedIn: boolean){
+  setUserIsLoggedIn(state, userIsLoggedIn: boolean) {
     state.userIsLoggedIn = userIsLoggedIn;
   },
-  setUserProfile(state, userProfile: Profile){
+  setUserProfile(state, userProfile: Profile) {
     state.userProfile = userProfile;
-  }
+  },
 };
 
 export default mutations;

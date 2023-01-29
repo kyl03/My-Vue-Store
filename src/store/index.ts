@@ -1,8 +1,7 @@
-
-import { User } from '@/models/user';
-import { createStore } from 'vuex'
-import productsModule from './products';
-import usersModule from './users';
+import { User } from "@/models/user";
+import { createStore } from "vuex";
+import productsModule from "./products";
+import usersModule from "./users";
 
 export interface IState {
   authUser: User | null;
@@ -12,20 +11,18 @@ export interface IState {
 export default createStore({
   state: {
     authUser: null,
-    greeting: 'Bienvenida',
-    token: '',
+    greeting: "Bienvenida",
+    token: "",
   },
   getters: {
     saludo(state) {
       return state.greeting;
-    }
+    },
   },
-  mutations: {
-  },
-  actions: {
-  },
+  mutations: {},
+  actions: {},
   modules: {
     users: usersModule,
-    products: productsModule
-  }
-})
+    products: productsModule,
+  },
+});
