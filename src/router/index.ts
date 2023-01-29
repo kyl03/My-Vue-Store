@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
 import ProfileView from "@/views/ProfileView.vue";
-import loggedInGuard, { notLoggedInGuard } from "./user-guard";
+import loggedInGuard from "./user-guard";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
     name: "login",
-    beforeEnter: notLoggedInGuard,
+    // beforeEnter: notLoggedInGuard,
     component: LoginView,
   },
   {

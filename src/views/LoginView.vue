@@ -42,7 +42,10 @@ export default defineComponent({
   setup() {
     let password = ref<string>("");
     let email = ref<string>("");
-    const { fetchUserToken } = useUsers();
+    const { fetchUserToken, userIsLoggedIn } = useUsers();
+    if (userIsLoggedIn) {
+      router.push("/");
+    }
     return {
       email,
       password,

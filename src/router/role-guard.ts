@@ -3,7 +3,7 @@ import { RouteLocation } from "vue-router";
 const haveRoleGuard = (
   to: RouteLocation,
   from: RouteLocation,
-  next: ()=> void
+  next: () => void
 ) => {
   console.log(to, from, next);
   const userRole = localStorage.getItem("userRole");

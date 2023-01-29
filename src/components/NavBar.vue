@@ -13,7 +13,7 @@
     <div>
       <h2 href="/">{{ title }}</h2>
     </div>
-    <div class="btn-logout">
+    <div class="btn-logout" v-if="userIsLoggedIn">
       <CustomButton @click="logOut">
         <span class="glyphicon glyphicon-log-out"></span> Log out
       </CustomButton>
