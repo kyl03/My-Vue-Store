@@ -19,3 +19,13 @@ npm run build
 ```
 npm run lint
 ```
+
+### API documentation
+```
+https://fakeapi.platzi.com/en/rest/introduction
+```
+```
+Login for testing:
+  "email": "john@mail.com",
+  "password": "changeme",
+```
