@@ -6,7 +6,6 @@ title="My Store"
 <NavBarLinks/>
 </div>
 <router-view />
-<CartList v-show="isCartOpen" />
 </template>
 
 <script lang="ts">
