@@ -3,7 +3,7 @@ import { RouteLocation } from "vue-router";
 const haveRoleGuard = (
   to: RouteLocation,
   from: RouteLocation,
-  next: Function
+  next: ()=> void
 ) => {
   console.log(to, from, next);
   const userRole = localStorage.getItem("userRole");
@@ -11,7 +11,7 @@ const haveRoleGuard = (
     next();
   } else {
     alert("No eres admin! no puedes pasar!");
-    next({ name: "login" });
+    // next({ name: "login" });
   }
 };
 

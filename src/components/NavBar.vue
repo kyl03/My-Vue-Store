@@ -1,7 +1,19 @@
 <template>
-  <nav class="navbar navbar-light bg-light">
-    <p class="navbar-brand">{{ title }}</p>
+  <!-- <nav class="navbar navbar-light bg-light">
+    <div class="title">
+      <p class="navbar-brand">{{ title }}</p>
+    </div>
     <div class="btn-logout" v-if="userIsLoggedIn">
+      <CustomButton @click="logOut">
+        <span class="glyphicon glyphicon-log-out"></span> Log out
+      </CustomButton>
+    </div>
+  </nav> -->
+  <nav class="navbar navbar-light bg-light">
+    <div>
+      <h2 href="/">{{ title }}</h2>
+    </div>
+    <div class="btn-logout">
       <CustomButton @click="logOut">
         <span class="glyphicon glyphicon-log-out"></span> Log out
       </CustomButton>
@@ -43,38 +55,31 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.btn-logout {
-  margin: 5px;
-  color: thistle;
-  border-style: solid;
-  border-color: thistle;
-  border-radius: 5px;
-  width: fit-content;
-  justify-content: end;
-}
-
 .navbar {
   height: 80px;
   background-color: thistle;
   margin-bottom: 10px;
   display: flex;
+  justify-content: space-between;
+}
+
+div {
+  width: 100%;
   justify-content: flex-end;
 }
 
-.navbar-brand {
-  padding: auto;
-  color: gray;
-  display: flex;
-  justify-content: flex-start;
+h2 {
+  width: fit-content;
+  color: white;
+  margin-left: 10px;
+  font-weight: 400;
 }
 
-p {
-  font-size: 30px;
-  font-weight: 300;
-}
-
-nav {
+.btn-logout {
   display: flex;
-  justify-content: space-between;
+  width: fit-content;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
 }
 </style>

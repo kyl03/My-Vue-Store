@@ -1,4 +1,4 @@
-import { RouteLocation } from "vue-router";
+import { RouteComponent, RouteLocation } from "vue-router";
 
 const loggedInGuard = (
   to: RouteLocation,
@@ -11,6 +11,20 @@ const loggedInGuard = (
     next();
   } else {
     // alert('You must be logged in first')
+  }
+};
+export const notLoggedInGuard = (
+  to: RouteLocation,
+  from: RouteLocation,
+  next: (route: RouteComponent) => void
+) => {
+  console.log(to, from, next);
+  const token = localStorage.getItem("token") ?? "";
+  if (token == "") {
+    next({});
+  } else {
+    // alert('You must be logged in first')
+    next({ name: "home" });
   }
 };
 
