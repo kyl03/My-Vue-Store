@@ -1,14 +1,4 @@
 <template>
-  <!-- <nav class="navbar navbar-light bg-light">
-    <div class="title">
-      <p class="navbar-brand">{{ title }}</p>
-    </div>
-    <div class="btn-logout" v-if="userIsLoggedIn">
-      <CustomButton @click="logOut">
-        <span class="glyphicon glyphicon-log-out"></span> Log out
-      </CustomButton>
-    </div>
-  </nav> -->
   <nav class="navbar navbar-light bg-light">
     <div>
       <h2 href="/">{{ title }}</h2>
