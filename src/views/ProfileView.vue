@@ -3,6 +3,7 @@
     <img class="card-img-top" :src="userProfile.avatar" alt="Card image cap" />
     <div class="card-body">
       <h5 class="card-title">Name: {{ userProfile.name }}</h5>
+      <p class="card-text">Email: {{ userProfile.email }}</p>
       <p class="card-text">Role: {{ userProfile.role }}</p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
@@ -46,7 +47,7 @@ img {
 
 @media only screen and (min-width: 600px) {
   .card {
-    width: 50%;
+    width: 40%;
   }
 
   img {

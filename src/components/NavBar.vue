@@ -3,9 +3,7 @@
     <p class="navbar-brand">{{ title }}</p>
     <div class="btn-logout" v-if="userIsLoggedIn">
       <CustomButton @click="logOut">
-        <template v-slot name="right-icon" src>
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-        </template>
+        <span class="glyphicon glyphicon-log-out"></span> Log out
       </CustomButton>
     </div>
   </nav>
@@ -73,6 +71,7 @@ p {
   font-size: 30px;
   font-weight: 300;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
