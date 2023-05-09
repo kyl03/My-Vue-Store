@@ -13,9 +13,16 @@
           >Search</CustomButton
         >
       </div>
-
+      <div class="div-btn">
+        <button class="btn-page" id="btn_previous" @click="previousPage()">
+          &#10094;
+        </button>
+        <button class="btn-page" id="btn_next" @click="nextPage()">
+          &#10095;
+        </button>
+      </div>
       <div class="user-list" v-if="products.length > 0">
-        <ProductItem
+        <ProductCardV1
           v-for="product in products"
           :key="product.id"
           :product="product"
@@ -25,12 +32,10 @@
       <div v-else>
         <p>0 products found</p>
       </div>
-      <div class="div-btn">
-        <button class="btn-page" id="btn_previous" @click="previousPage()">
-          &#10094;
-        </button>
-        <button class="btn-page" id="btn_next" @click="nextPage()">
-          &#10095;
+
+      <div>
+        <button class="back-to-top-btn" @click="scrollToTop()">
+          <i class="fas fa-arrow-up">Top</i>
         </button>
       </div>
     </div>
@@ -39,7 +44,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ProductItem from "@/components/ProductItem.vue";
+import ProductCardV1 from "@/components/ProductCardV1.vue";
 import { useRouter } from "vue-router";
 import useProducts from "@/composables/useProducts";
 import { Product } from "@/models/product";
@@ -49,7 +54,7 @@ import useUsers from "@/composables/useUsers";
 export default defineComponent({
   name: "HomeView",
   components: {
-    ProductItem,
+    ProductCardV1,
     CustomButton,
   },
   setup() {
@@ -79,6 +84,9 @@ export default defineComponent({
       productsLength,
       btn_next,
       btn_previous,
+      scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      },
       search: (inSearchProduct: string) =>
         inSearchProduct.length > 2
           ? fetchProductsByFilter(inSearchProduct)
@@ -90,13 +98,24 @@ export default defineComponent({
       nextPage: () => {
         console.log("lenght " + productsLength.value);
         if (productsLength.value > 0) {
-          (offset += 10), console.log(offset), fetchProductsPage(offset);
-        } //TODO: disable button if no more products are found
+          try {
+            offset += 10;
+            console.log(offset);
+            fetchProductsPage(offset);
+            //TODO: disable button if no more products are found
+          } catch (error) {
+            console.log(error);
+          }
+        }
       },
       previousPage: () => {
-        console.log(offset),
-          offset > 0 ? (offset -= 10) : (offset = 0),
-          fetchProductsPage(offset);
+        try {
+          console.log(offset),
+            offset > 0 ? (offset -= 10) : (offset = 0),
+            fetchProductsPage(offset);
+        } catch (error) {
+          console.log(error);
+        }
       },
     };
   },
@@ -135,11 +154,30 @@ export default defineComponent({
   margin-right: auto;
   padding: 10px;
 }
+
 .btn-page {
   width: 25px;
   display: inline-flex;
   width: 30px;
   text-align: center;
   display: inline;
+}
+.back-to-top-btn {
+  background-color: gray;
+  border: none;
+  border-radius: 50%;
+  bottom: 20px;
+  color: thistle;
+  cursor: pointer;
+  height: 50px;
+  right: 20px;
+  width: 50px;
+}
+
+i {
+  display: block;
+  font-size: auto;
+  margin: auto;
+  color: thistle;
 }
 </style>
